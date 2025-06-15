@@ -1,0 +1,25 @@
+pom.xml文件是属于Maven的，用于配置项目的基本信息和依赖管理
+XML声明和根元素：
+<?xml version="1.0" encoding="UTF-8"?>  ：声明这是一个XML文件，版本是1.0，使用UTF-8编码
+<project xmlns="http://maven.apache.org/POM/4.0.0"  ：Maven的pom根元素，用于定义项目的基本信息
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  ：指定Maven  POM的命名空间
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> :指向 Maven POM 的 XML Schema 文件，用于验证 POM 结构。
+    <modelVersion>4.0.0</modelVersion>  :指定 POM 模型版本，固定为4.0.0（Maven 2.x/3.x 的标准版本）。
+
+项目基本坐标：
+<groupId>mashibing.com</groupId>  项目组织的唯一标识，通常是公司域名的倒序（如com.mashibing）
+<artifactId>HelloFiber</artifactId>  项目的唯一标识符，通常是项目名称（如hello-fiber）。
+<version>1.0-SNAPSHOT</version>  项目版本号，SNAPSHOT表示这是一个开发中的快照版本。
+
+依赖管理：
+<dependencies>  包含项目依赖的所有库。
+    <!-- https://mvnrepository.com/artifact/co.paralleluniverse/quasar-core -->
+    <dependency>  定义单个依赖项
+        <groupId>co.paralleluniverse</groupId> 唯一标识一个依赖库（称为 "坐标"）
+        <artifactId>quasar-core</artifactId>  Quasar 是一个支持协程（Fiber）的 Java 库，用于实现轻量级线程（纤程），可显著提升高并发场景下的性能。
+        <version>0.8.0</version>
+    </dependency>
+</dependencies>
+
+隐藏字符问题：
+​    <groupId>mashibing.com</groupId>
